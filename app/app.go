@@ -59,6 +59,7 @@ func (a *App) getRouter() *mux.Router {
 	router := mux.NewRouter()
 	router.Handle("/healthcheck", NewHealthcheckHandler(a)).Methods("GET")
 	router.Handle("/shorten", NewShortenHandler(a)).Methods("POST")
+	router.Handle("/{shortUrl}", NewRetrieveHandler(a)).Methods("GET")
 	return router
 }
 

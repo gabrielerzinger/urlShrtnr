@@ -1,7 +1,7 @@
 package repositories
 
 import (
-
+	"github.com/gabrielerzinger/urlShrtnr/models"
 	"github.com/go-redis/redis"
 	"github.com/spf13/viper"
 )
@@ -34,6 +34,17 @@ func (s *RedisStorage) Connect(config *viper.Viper) error {
 
 	return err
 }
+
+func (s *RedisStorage) Store(entry *models.Entry) error {
+	_, err := s.Redis.Set(entry.ShortUrl, entry.URL, 0).Result()
+	return err
+}
+
+func (s *RedisStorage) 	RetrieveByShortString(shortString string) (URL string, err error){
+	URL, err = s.Redis.Get(shortString).Result()
+	return
+}
+
 
 // Ping implementation
 func (s *RedisStorage) Ping() error {
