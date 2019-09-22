@@ -1,0 +1,3 @@
+redis:
+  url: "redis-17916.c11.us-east-1-2.ec2.cloud.redislabs.com:17916"
+  password: "SQMDfODLlb1RlQhxuCiASYTRLudMhZAR"
