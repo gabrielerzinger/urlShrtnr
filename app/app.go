@@ -58,6 +58,7 @@ func (a *App) configureStorage() error {
 func (a *App) getRouter() *mux.Router {
 	router := mux.NewRouter()
 	router.Handle("/healthcheck", NewHealthcheckHandler(a)).Methods("GET")
+	router.Handle("/shorten", NewShortenHandler(a)).Methods("POST")
 	return router
 }
 

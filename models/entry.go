@@ -6,3 +6,8 @@ type Entry struct {
 	ShortUrl string
 	URL string
 }
+
+
+type EntryRequest struct {
+	URL string
+}
