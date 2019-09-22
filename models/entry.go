@@ -10,4 +10,3 @@ type Entry struct {
 type EntryRequest struct {
 	URL string
 }
-
